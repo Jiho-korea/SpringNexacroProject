@@ -109,7 +109,7 @@
         	"launch":"./Application_Desktop.xadl.js",
         	"quickview":"./Application_Desktop.xadl.quickview.js",
         	"form":[
-        				"./Base/HelloWorld.xfdl.js"
+        				"./Base/NexacroMidtermExam.xfdl.js"
         	]
         }
         ],  

@@ -42,9 +42,9 @@
         
         this.mainframe_createBodyFrame = function()
         {
-            var frame0 = new ChildFrame("ChildFrame00",null,null,null,null,null,null,"Base::HelloWorld.xfdl",this);
+            var frame0 = new ChildFrame("ChildFrame00",null,null,null,null,null,null,"Base::NexacroMidtermExam.xfdl",this);
             this.addChild(frame0.name, frame0);
-            frame0.set_formurl("Base::HelloWorld.xfdl");
+            frame0.set_formurl("Base::NexacroMidtermExam.xfdl");
 
             this.frame=frame0;
         };
