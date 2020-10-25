@@ -11,7 +11,7 @@
 
             
             // global variable
-
+            this._addVariable("CONTEXT","/mavennexacro/");
             
             obj = null;
         };
@@ -42,9 +42,9 @@
         
         this.mainframe_createBodyFrame = function()
         {
-            var frame0 = new ChildFrame("ChildFrame00",null,null,null,null,null,null,"Base::NexacroMidtermExam.xfdl",this);
+            var frame0 = new ChildFrame("ChildFrame00",null,null,null,null,null,null,"Base::DBtest.xfdl",this);
             this.addChild(frame0.name, frame0);
-            frame0.set_formurl("Base::NexacroMidtermExam.xfdl");
+            frame0.set_formurl("Base::DBtest.xfdl");
 
             this.frame=frame0;
         };

@@ -12,7 +12,7 @@
 
             
             // global variable
-
+            this._addVariable("CONTEXT","/mavennexacro/");
             
             obj = null;
         };
