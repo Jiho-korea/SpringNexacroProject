@@ -109,7 +109,7 @@
         	"launch":"./Application_Desktop.xadl.js",
         	"quickview":"./Application_Desktop.xadl.quickview.js",
         	"form":[
-        				"./Base/DBtest.xfdl.js"
+        				"./Base/HelloWorld.xfdl.js"
         	]
         }
         ],  

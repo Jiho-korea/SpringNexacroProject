@@ -24,8 +24,8 @@
             // UI Components Initialize
             obj = new Grid("Grid00","32","20","398","182",null,null,null,null,null,null,this);
             obj.set_taborder("0");
-            obj.set_binddataset("Dataset00");
-            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"142\"/><Column size=\"80\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"학과\"/><Cell col=\"1\" text=\"성명\"/><Cell col=\"2\" text=\"학번\"/><Cell col=\"3\" text=\"재수강\"/></Band><Band id=\"body\"><Cell text=\"bind:학과\"/><Cell col=\"1\" text=\"bind:성명\"/><Cell col=\"2\" text=\"bind:학번\"/><Cell col=\"3\" text=\"bind:재수강\"/></Band></Format></Formats>");
+            obj.set_binddataset("Dataset0");
+            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/></Columns><Rows><Row band=\"head\" size=\"24\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"학과\"/><Cell col=\"1\" text=\"성명\"/><Cell col=\"2\" text=\"학번\"/><Cell col=\"3\" text=\"재수강\"/></Band><Band id=\"body\"><Cell text=\"bind:학과\"/><Cell col=\"1\" text=\"bind:성명\"/><Cell col=\"2\" text=\"bind:학번\"/><Cell col=\"3\" text=\"bind:재수강\"/></Band></Format></Formats>");
             this.addChild(obj.name, obj);
             // Layout Functions
             //-- Default Layout : this
@@ -64,7 +64,7 @@
         	let id = "scorelist_xml";
         	let url = "list/score";
         	let reqDs = "";
-        	let respDs = "Dataset00=scorelist";
+        	let respDs = "Dataset0=scorelist";
         	let args = "";
         	let callback = "received";
 

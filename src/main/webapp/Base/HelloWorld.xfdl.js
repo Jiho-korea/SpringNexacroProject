@@ -79,7 +79,7 @@
 
         this.Button_Nexacro_Page_onclick = function(obj,e)
         {
-        	this.go("Base::HelloWorld2.xfdl");
+        	this.go("Base::NexacroMidtermExam.xfdl");
         };
 
         });
