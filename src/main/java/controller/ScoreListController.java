@@ -46,7 +46,7 @@ public class ScoreListController {
 
 		VariableList out_varList = out_pData.getVariableList();
 		out_varList.add("ErrorCode", 0);
-		out_varList.add("ErrorMsg", "성공");
+		out_varList.add("ErrorMsg", "학생 성적 조회 성공");
 
 		HttpPlatformResponse pRes = new HttpPlatformResponse(response, PlatformType.CONTENT_TYPE_XML, "UTF-8");
 		pRes.setData(out_pData);

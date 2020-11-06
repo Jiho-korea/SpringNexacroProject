@@ -6,6 +6,10 @@
 작    성    일 : 2020.10.24
 작  성  내  용 : 직접 만든 객체들 빈으로 등록
 ========================================================================
+수    정    자 : 강지호
+수    정    일 : 2020.11.07
+수  정  내  용 : 학생 점수 업데이트 서비스 객체 빈 등록
+========================================================================
 */
 
 package config;
@@ -19,6 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import dao.StudentDAO;
 import service.ScoreListService;
+import service.UpdateScoreService;
 
 @Configuration
 @EnableTransactionManagement
@@ -47,16 +52,21 @@ public class StudentConfig {
 		return tm;
 	}
 
-	// DAO 객체
+	// 학생 테이블 DAO 객체
 	@Bean
 	public StudentDAO studentDAO() {
 		return new StudentDAO(dataSource());
 	}
 
-	// 서비스 객체
+	// 학생 점수 리스트 서비스 객체
 	@Bean
 	public ScoreListService scoreListService() {
 		return new ScoreListService(studentDAO());
 	}
 
+	// 학생 점수 업데이트 서비스 객체
+	@Bean
+	public UpdateScoreService updateScoreService() {
+		return new UpdateScoreService(studentDAO());
+	}
 }

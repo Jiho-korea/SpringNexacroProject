@@ -22,6 +22,8 @@ import org.springframework.jdbc.core.RowMapper;
 import com.nexacro17.xapi.data.DataSet;
 import com.nexacro17.xapi.data.DataTypes;
 
+import vo.UpdateScoreRequest;
+
 // DB STUDENT 테이블에 접근하는 DAO
 public class StudentDAO {
 	private JdbcTemplate jdbcTemplate;
@@ -76,15 +78,21 @@ public class StudentDAO {
 		return results.isEmpty() ? null : results.get(0);
 
 	}
-//
-//	public int insertStudent(Student student) {
-//		int result = jdbcTemplate.update(
-//				"INSERT INTO student(SID,NAME,PASSWORD,GRADE,SUBJECT,MANAGER) VAlUES(?, ?, ?, ?, ?, 0)",
-//				student.getSid(), student.getName(), student.getPassword(), student.getGrade(), student.getSubject());
-//
-//		return result;
-//	}
-//
+
+	public int updateStudentScore(UpdateScoreRequest updateScoreReq) {
+		int result = jdbcTemplate.update(
+				"UPDATE mavennexacro.student SET STUDENT_ATTENDANCE_DAY = ?, STUDENT_ATTENDANCE = ?, "
+						+ "STUDENT_MIDDLE_SCORE = ?, STUDENT_HOMEWORK = ?, STUDENT_FINAL_SCORE = ?, "
+						+ "STUDENT_UNIT_SCORE = ?, STUDENT_GRADE = ?, STUDENT_ADJUST_SCORE = ?, STUDENT_ALL_SCORE = ?,"
+						+ "STUDENT_FINAL_GRADE = ?, STUDENT_GPA = ? WHERE STUDENT_ID = ?",
+				updateScoreReq.getAttendanceDay(), updateScoreReq.getAttendance(), updateScoreReq.getMiddleScore(),
+				updateScoreReq.getHomework(), updateScoreReq.getFinalScore(), updateScoreReq.getUnitScore(),
+				updateScoreReq.getGrade(), updateScoreReq.getAdjustScore(), updateScoreReq.getAllScore(),
+				updateScoreReq.getFinalGrade(), updateScoreReq.getGpa(), updateScoreReq.getStudentId());
+
+		return result;
+	}
+
 //	public Student selectBySidPassword(LoginRequest loginRequest) {
 //		List<Student> results = jdbcTemplate.query("SELECT * FROM student WHERE SID = ? AND PASSWORD = ?",
 //				new RowMapper<Student>() {
