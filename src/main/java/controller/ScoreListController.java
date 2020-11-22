@@ -27,7 +27,7 @@ import service.ScoreListService;
 @Controller
 public class ScoreListController {
 	ScoreListService scoreListService;
-
+	// 명시적 의존 주입
 	public void setScoreListService(ScoreListService scoreListService) {
 		this.scoreListService = scoreListService;
 	}
@@ -36,22 +36,25 @@ public class ScoreListController {
 	@ResponseBody
 	public void scorelist(HttpServletResponse response) throws Exception {
 
-		// Response 생성
+		// 응답 데이터 생성
 		PlatformData out_pData = new PlatformData();
 
+		// 서비스 객체에 의존하여 Dataset 리턴 받음
 		DataSet ds = scoreListService.studentScoreList();
 
-		// DAO로 받은 데이터 셋을 RESPONSE 객체에 추가
+		// 서비스 - DAO로 받은 데이터 셋을 응답 데이터 객체에 추가
 		out_pData.addDataSet(ds);
 
+		// 응답, 에러코드 생성
 		VariableList out_varList = out_pData.getVariableList();
 		out_varList.add("ErrorCode", 0);
 		out_varList.add("ErrorMsg", "학생 성적 조회 성공");
 
-		HttpPlatformResponse pRes = new HttpPlatformResponse(response, PlatformType.CONTENT_TYPE_XML, "UTF-8");
+		// Response 객체 생성
+		HttpPlatformResponse pRes = new HttpPlatformResponse(response, PlatformType.CONTENT_TYPE_XML, "UTF-8");	
+		// 응답 데이터 담기
 		pRes.setData(out_pData);
-
+		// 클라이언트에 응답
 		pRes.sendData();
 	}
-
 }

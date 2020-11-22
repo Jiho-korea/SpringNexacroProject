@@ -265,7 +265,7 @@
         작  성  내  용 : 학생 정보 조회 요청, 콜백
         ========================================================================
         수    정    자 : 강지호
-        수    정    일 : 2020.10.24
+        수    정    일 : 2020.11.07
         수  정  내  용 : 학생 성적 수정 요청, 콜백
         ========================================================================
         함  수  설  명 :
@@ -282,16 +282,17 @@
         this.NexacroMidtermExam_onload = function(obj,e)
         {
         	nexacro.getApplication().DatasetGlobal.clear();
-        	let id = "scorelist_xml";
-        	let url = "list/score";
-        	let reqDs = "";
-        	let respDs = "DatasetGlobal=scorelist";
-        	let args = "";
-        	let callback = "received1";
+        	let id = "scorelist_xml";  // 요청 ID
+        	let url = "list/score"; // 요청 경로 (컨트롤러 요청 매핑 경로)
+        	let reqDs = ""; // 요청 시 주는 Dataset
+        	let respDs = "DatasetGlobal=scorelist"; // 서버로 부터 응답 받은 Dataset 을 어떤 Dataset에 저장할 지 지정
+        	let args = ""; // 요청 파라미터
+        	let callback = "received1"; // 콜백 함수 이름 지정
 
         	// 폼변수
         	this.serverInfo = "";
 
+        	// 요청 메소드
         	this.transaction(id, nexacro.getApplication().CONTEXT + url, reqDs, respDs, args, callback);
 
         };
@@ -309,14 +310,16 @@
         // 버튼 클릭 시 서버에 업데이트 요청(컨트롤러 매핑 요청 경로로) 매개변수로 입력 한 값 넣어줌
         this.Button00_onclick = function(obj,e)
         {
-        	var id = "";
-        	var url = "update/score";
+        	var id = ""; // 요청 ID
+        	var url = "update/score"; // 요청 경로 (컨트롤러 요청 매핑 경로)
         	var reqDs = "";
         	var respDs = "";
+        	// 요청 파라미터
         	var args = "attendanceDay=" + this.attendanceDay.text + " attendance="+this.attendance.text + " middleScore="+this.middleScore.text + " homework="+this.homework.text + " finalScore="+this.finalScore.text + " unitScore="+this.unitScore.text + " grade="+this.grade.text + " adjustScore="+this.adjustScore.text + " allScore="+this.allScore.text
         			+ " finalGrade="+this.finalGrade.text + " gpa="+this.gpa.text + " studentId="+this.studentId.text;
+        	// 콜백 함수 이름 지정
         	var callback = "received2";
-
+        	// 요청 메소드
         	this.transaction(id, nexacro.getApplication().CONTEXT + url, reqDs, respDs, args, callback);
         };
 

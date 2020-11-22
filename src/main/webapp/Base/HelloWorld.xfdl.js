@@ -21,20 +21,20 @@
 
             
             // UI Components Initialize
-            obj = new Static("Static00","74","30","352","108",null,null,null,null,null,null,this);
+            obj = new Static("Static00","174","60","176","108",null,null,null,null,null,null,this);
             obj.set_taborder("0");
-            obj.set_text("HelloWorld!!!!!!!!");
+            obj.set_text("학사행정");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button_Spring_Page","448","224","132","25",null,null,null,null,null,null,this);
+            obj = new Button("Button_Spring_Page","90","220","132","25",null,null,null,null,null,null,this);
             obj.set_taborder("1");
-            obj.set_text("스프링의 페이지 이동");
+            obj.set_text("서버 접속 테스트");
             obj.set_font("12px/normal \"Gulim\"");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button_Nexacro_Page","598","224","132","25",null,null,null,null,null,null,this);
+            obj = new Button("Button_Nexacro_Page","270","220","132","25",null,null,null,null,null,null,this);
             obj.set_taborder("2");
-            obj.set_text("넥사크로의 페이지 이동");
+            obj.set_text("학생 성적 관리");
             obj.set_font("12px/normal \"Gulim\"");
             this.addChild(obj.name, obj);
             // Layout Functions
@@ -63,11 +63,11 @@
         ========================================================================
         작    성    자 : 강지호
         작    성    일 : 2020.10.23
-        작  성  내  용 : HelloWorld 출력
+        작  성  내  용 : 스프링 페이지 이동, 넥사크로 페이지 이동 테스트
         ========================================================================
         수    정    자 : 강지호
-        수    정    일 : 2020.10.23
-        수  정  내  용 : 스프링 페이지 이동, 넥사크로 페이지 이동 테스트
+        수    정    일 : 2020.11.07
+        수  정  내  용 : 성적 관리 링크 추가
         ========================================================================
         */
 
